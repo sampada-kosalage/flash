@@ -1,0 +1,83 @@
+package onlinegroceryshopping.model;
+
+
+import java.io.IOException;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class groceryServlet
+ */
+@WebServlet("/groceryServlet")
+public class groceryServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	 private static final String URL = "jdbc:mysql://localhost:3306/";
+	    private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+	    private static final String USER = "root";
+	    private static final String PASS = "Success123!";
+	    java.sql.Connection conn;
+   
+    public groceryServlet() {
+        super();
+        try {
+			Class.forName(JDBC_DRIVER);
+			conn = DriverManager.getConnection(URL,USER,PASS);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+    }
+
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			String name = request.getParameter("name");
+			String email = request.getParameter("email");
+			String phone = request.getParameter("phone");
+			String address = request.getParameter("address");
+			int id = Integer.parseInt(request.getParameter("id"));
+			int quantity = Integer.parseInt(request.getParameter("quantity"));
+			
+			String query = "INSERT INTO customer_details (Name, Phone_No, Email_ID, Address) VALUES (?, ?, ?, ?)";
+			
+			String query1 = "INSERT INTO order_details (quantity, prod_ID, cust_ID) VALUES (?, ?, ?)";
+			PreparedStatement ps = conn.prepareStatement(query,  Statement.RETURN_GENERATED_KEYS);
+			
+			ps.setString(1, name);
+			ps.setString(2, phone);
+			ps.setString(3, email);
+			ps.setString(4, address);
+			
+			ps.executeUpdate();
+			ResultSet rs = ps.getGeneratedKeys();
+			rs.next();
+			int auto_id = rs.getInt(1);
+
+			PreparedStatement ps2 = conn.prepareStatement(query1);
+			ps2.setInt(1, quantity);
+			ps2.setInt(2, id);
+			ps2.setInt(3, auto_id);
+			ps2.executeUpdate();
+			response.sendRedirect("Thankyou.html");
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

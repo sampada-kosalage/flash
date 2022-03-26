@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+<user>
+<name>DI</name>
+<gender>Female</gender>
+<age>27</age>
+</user>
+<user>
+<name>Ram</name>
+<gender>male</gender>
+<age>31</age>
+</user>
+<user>
+<name>Sam</name>
+<gender>Female</gender>
+<age>28</age>
+</user>
+<user>
+<name>Ram</name>
+<gender>male</gender>
+<age>30</age>
+</user>
+</users>

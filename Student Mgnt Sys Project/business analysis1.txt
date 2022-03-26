@@ -1,0 +1,5 @@
+1)Identify the users
+2)Identify the functions of each user
+3)Identify the entities of the functions
+4)Identify the attribute of each entity
+5)Identify the relationship of entity

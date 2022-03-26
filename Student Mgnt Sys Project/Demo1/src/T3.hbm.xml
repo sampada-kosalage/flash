@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="pojo.T3" table="T3">
+        		<id name="id" column="id">
+            			<generator class="native"/>
+        		</id>
+			<!-- Z.hbm.xml01  <id name="COL" column="COL" -->
+			<property name="T3C1" column="T3C1" />
+			<property name="T3C2" column="T3C2" />
+			<property name="T3C3" column="T3C3" />
+		
+	</class>
+</hibernate-mapping>

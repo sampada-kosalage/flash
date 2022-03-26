@@ -1,0 +1,16 @@
+@charset "ISO-8859-1";
+
+
+      
+         table.table1 {border-collapse:collapse;}
+         
+         
+         td.td1 {
+            border-style:ridge; 
+            border-width:1px; 
+            border-color:#000000; 
+            padding: 1px;
+         }
+        
+     
+      

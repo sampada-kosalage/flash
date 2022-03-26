@@ -1,0 +1,31 @@
+1)User-Admin
+Entites:faculty,course,transaction,admission,
+        certificate,vanue
+Functions:1.Manage the staff
+          2.create identycard
+          3.Information about the course
+          4.control on the mgnt sys
+          5.Take fess
+          6.control the all mgnt sys
+          7.create certificate
+          8.schedule batch
+
+2)User-Counseller
+Entities:course(student,topic),student,admission
+Functions:1.Council a student to identify thr             course he should join
+          2.Answer the queries of student about the             admission & fees
+
+3)User-Faculty
+Entites:student,batch,attendence,exam,study         material,
+Functions:1.Take attendance of student
+          2.Students are admitted in the classroom
+          3.Module end exam are conducted by             faculty
+          4.provide study materials
+
+4)User-Student
+Entites:viewcourse,attendance,exam,feedback,
+        document,studet materials
+Functions:1.Listning the teacher who will teach
+          2.Give feedback of the faculty
+          3.Prepare for exam
+          

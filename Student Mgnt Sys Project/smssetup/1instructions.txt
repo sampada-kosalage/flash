@@ -1,0 +1,10 @@
+1. Install MySQL and workbench
+URL: https://dev.mysql.com/downloads/windows/installer/8.0.html
+download:Windows (x86, 32-bit), MSI Installer	8.0.26	450.7M	Download
+2. Create the tables using the sms.sql 
+3. Upload the data to the tables lookup.csv course.csv subject.csv topic.csv coursesubjecttopic.csv
+4. Install Tomcat 9 web server and start tomcat(run startup.bat in the bin)
+5. Copy the sms.war file in the webapps directory of tomcat
+6. Edit webapps\sms\js\properties.js. update the database credentials(port and password) in this file
+7. Edit webapps\sms\WEB-INF\classes\hibernate.cfg update the database credentials(port and password) in this file
+8. now lauch the website using localhost:8080/sms
